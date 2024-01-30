@@ -25,5 +25,41 @@
         }
     }
 
+    $firstMovie = new Movie("Avengers:Endgame", "Azione", 2019);
+    $firstMovie -> setDiscount(37);
+
+    $secondMovie = new Movie("Tutti tranne te", "Commedia", 2024);
+    $secondMovie -> setDiscount(24);
+
+    $thirdMovie = new Movie ("Alla ricerca della felicità", "Drammatico", 2006);
+    $thirdMovie -> setDiscount(67);
+
+    $arr_movies = [
+        $firstMovie,
+        $secondMovie,
+        $thirdMovie
+    ];
+
+    
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <?php 
+            foreach($arr_movies as $movie){
+                echo $movie->name." è un film del genere ".$movie->genre.", uscito nel ". $movie->year. ". <br> Lo sconto per te è del ".$movie->getDiscount()."%";
+                echo "<br>";
+                echo "<br>";
+            }
+        ?>
+    </div>
+</body>
+</html>
